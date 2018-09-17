@@ -33,12 +33,26 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use faker to generate seed data
+gem 'faker', '~> 1.6', '>= 1.6.3'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+
+  # Use pry for better debugging
+  gem 'pry-byebug', '~> 3.4'
+  gem 'pry-rails', '~> 0.3.4'
+  gem 'pry-stack_explorer', '~> 0.4.9'
+
+  # Testing gems
+  gem 'rspec', '~> 3.8'
+  gem 'rspec-instafail', '~> 1.0'
+  gem 'rspec-html-matchers', '~> 0.9.1'
+  gem 'factory_girl', '~> 4.9'
 end
 
 group :development do
