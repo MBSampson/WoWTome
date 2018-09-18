@@ -40,7 +40,7 @@ gem 'faker', '~> 1.6', '>= 1.6.3'
 gem 'devise', '~> 4.2'
 
 # Use bootstrap to quickly develop view prototypes and utilize responsive layouts
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.1.2'
 
 # Dependencies for bootstrap
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
