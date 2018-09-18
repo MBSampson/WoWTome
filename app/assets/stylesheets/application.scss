@@ -1,6 +1,5 @@
 @import 'bootstrap';
 @import 'global';
-@import 'warcraft_colors';
 @import 'devise';
 @import 'navbar';
 
@@ -20,8 +19,10 @@ body {
 
 #main-content-wrapper {
   padding-top: 10px;
-  background: white;
   min-height: 100vh;
+
+  background: black;
+  color: $ivory;
 }
 
 .banner-img {
@@ -29,4 +30,29 @@ body {
   border-radius: 50px;
   display: block;
   margin: 10px auto;
+}
+
+.input-field {
+  padding: $input-field-padding !important;
+  border: 1px groove $gold-orange;
+  outline: none;
+
+  background: #212529;
+  color: $ivory;
+}
+
+a {
+  color: $gold-orange;
+}
+
+a:hover {
+  color: orange;
+}
+
+a:visited {
+  color: $dark-gold;
+}
+
+hr {
+  border-bottom: 1px solid $ivory;
 }

@@ -1,4 +1,4 @@
-/*** Core Style Variables ***/
+// WoW Colors
 $dk-red:          #c41f3b;
 $dh-magenta:      #a330c9;
 $druid-orange:    #ff7d0a;
@@ -12,11 +12,22 @@ $shaman-blue:     #0070DE;
 $warlock-purple:  #8787ed;
 $warrior-tan:     #c79c6e;
 
+// Standard Colors
+$shaded-white:    #f2f2f2; // rename to something more descriptive
+$gold-orange:     #eba53d;
+$ivory:           #fffff0;
+$charcoal:        #373737;
+$dark-gold:       #a4732a;
+
+// Fixed Design Styles
 $input-field-padding: 5px 10px;
 
-$shaded-white: #f2f2f2; // rename to something more descriptive
 
 /*** Global Styles ***/
+
+.btn {
+  color: $ivory;
+}
 
 .btn-danger {
   background: $dk-red;
@@ -34,12 +45,20 @@ $shaded-white: #f2f2f2; // rename to something more descriptive
   display: inline-block;
 }
 
-.input-field {
-  padding: $input-field-padding !important;
+.mb5 {
+  margin-bottom: 5px;
 }
 
 .mb10 {
   margin-bottom: 10px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mb25 {
+  margin-bottom: 25px;
 }
 
 .ml10 {

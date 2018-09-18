@@ -6,11 +6,19 @@
   <%= devise_error_messages! %>
 
   <div class="login-fields">
-    <%= f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: 'Email' %>
-    <br />
-    <br />
-    <%= f.password_field :password, autocomplete: 'new-password', placeholder: 'Password' %>
-    <%= f.password_field :password_confirmation, autocomplete: 'new-password', placeholder: 'Confirm password' %>
+    <%= f.email_field :email,
+                      autofocus: true,
+                      autocomplete: 'email',
+                      placeholder: 'Email',
+                      class: 'input-field mb10 w100' %>
+    <%= f.password_field :password,
+                         autocomplete: 'new-password',
+                         placeholder: 'Password',
+                         class: 'input-field mb5 w100' %>
+    <%= f.password_field :password_confirmation,
+                         autocomplete: 'new-password',
+                         placeholder: 'Confirm password',
+                         class: 'input-field mb20 w100' %>
     <%= f.submit 'Sign up', class: 'btn btn-dark no-border-radius w100' %>
   </div>
 <% end %>
