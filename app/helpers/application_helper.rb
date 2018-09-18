@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def display_authentication_options
+  def display_authentication_nav_items
     content_tag :ul, class: 'navbar-nav' do
       if current_user
         concat link_to 'Settings', edit_user_registration_url, class: 'nav-link'
