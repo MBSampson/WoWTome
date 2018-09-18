@@ -13,12 +13,12 @@
       <div class="col-md-6">
         <%= f.label 'Change Email' %>
         <br />
-        <%= f.email_field :email, autofocus: true, autocomplete: 'email' %>
+        <%= f.email_field :email, class: 'w100 input-field', autofocus: true, autocomplete: 'email' %>
       </div>
       <div class="col-md-6">
         <%= f.label 'New Password' %>
         <br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
+        <%= f.password_field :password, class: 'w100 input-field', autocomplete: "new-password" %>
         <% if @minimum_password_length %>
           <br />
           <em><%= @minimum_password_length %> characters minimum</em>
@@ -26,24 +26,23 @@
 
         <%= f.label 'Confirm Password' %>
         <br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, class: 'w100 input-field', autocomplete: "new-password" %>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-6">
-        <%= button_to 'Cancel my account', registration_path(resource_name), class: 'btn btn-danger cancel-account-btn', data: { confirm: "Are you sure?" }, method: :delete %>
+        <%= link_to 'Back', :back, class: 'btn btn-light btn-sm back-btn' %>
       </div>
       <div class="col-md-6">
         <%= f.label 'Confirm Changes' %><br />
-        <%= f.password_field :current_password, autocomplete: "current-password", placeholder: 'Password' %>
+        <%= f.password_field :current_password, class: 'w100 input-field', autocomplete: "current-password", placeholder: 'Password' %>
         <br />
         <br />
-        <%= f.submit 'Update', class: 'btn btn-dark pos-fr' %>
+        <%= button_to 'Cancel my account', registration_path(resource_name), class: 'btn btn-danger btn-sm', data: { confirm: "Are you sure?" }, method: :delete %>
+        <%= f.submit 'Update', class: 'btn btn-dark btn-sm pos-fr' %>
       </div>
     </div>
   </div>
   <div class="clear"></div>
 <% end %>
-
-<%= link_to 'Back', :back, class: 'btn btn-light ml10' %>

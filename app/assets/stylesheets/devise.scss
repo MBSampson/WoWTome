@@ -26,13 +26,9 @@
     padding: 10px;
   }
 
-  input {
-    width: 100%;
-    padding: $input-field-padding;
-  }
-
-  .cancel-account-btn {
+  .back-btn {
     position: absolute;
     bottom: 0;
+    left: 0;
   }
 }
