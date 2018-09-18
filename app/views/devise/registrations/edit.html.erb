@@ -11,9 +11,12 @@
   <div class="editable-settings-container">
     <div class="row">
       <div class="col-md-6">
-        <%= f.label 'Change Email' %>
+        <%= f.label 'Email' %>
         <br />
         <%= f.email_field :email, class: 'w100 input-field', autofocus: true, autocomplete: 'email' %>
+        <%= f.label 'Account Name' %>
+        <br />
+        <%= f.text_field :account_name, class: 'w100 input-field' %>
       </div>
       <div class="col-md-6">
         <%= f.label 'New Password' %>
