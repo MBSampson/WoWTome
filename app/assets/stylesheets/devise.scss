@@ -13,3 +13,26 @@
     padding: $input-field-padding;
   }
 }
+
+
+.editable-settings-container {
+  position: relative;
+
+  .row:nth-child(1) {
+    background: $shaded-white;
+  }
+
+  .row {
+    padding: 10px;
+  }
+
+  input {
+    width: 100%;
+    padding: $input-field-padding;
+  }
+
+  .cancel-account-btn {
+    position: absolute;
+    bottom: 0;
+  }
+}

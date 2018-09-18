@@ -14,8 +14,13 @@ $warrior-tan:     #c79c6e;
 
 $input-field-padding: 5px 10px;
 
+$shaded-white: #f2f2f2; // rename to something more descriptive
 
 /*** Global Styles ***/
+
+.btn-danger {
+  background: $dk-red;
+}
 
 .clear {
   clear: both;
@@ -33,6 +38,10 @@ $input-field-padding: 5px 10px;
   margin-bottom: 10px;
 }
 
+.ml10 {
+  margin-left: 10px;
+}
+
 .mt10 {
   margin-top: 10px;
 }
@@ -47,6 +56,10 @@ $input-field-padding: 5px 10px;
 
 .no-border-radius {
   border-radius: 0 !important;
+}
+
+.pl10 {
+  padding-left: 10px;
 }
 
 .pos-fl {
