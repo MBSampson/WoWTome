@@ -32,17 +32,18 @@
 
     <div class="row">
       <div class="col-md-6">
-        <%= link_to 'Back', :back, class: 'btn btn-light btn-sm back-btn' %>
+        <%= link_to 'Back', :back, class: 'btn btn-dark btn-sm back-btn pos-fl' %>
       </div>
       <div class="col-md-6">
         <%= f.label 'Confirm Changes' %><br />
         <%= f.password_field :current_password, class: 'w100 input-field', autocomplete: "current-password", placeholder: 'Password' %>
         <br />
         <br />
-        <%= button_to 'Cancel my account', registration_path(resource_name), class: 'btn btn-danger btn-sm', data: { confirm: "Are you sure?" }, method: :delete %>
         <%= f.submit 'Update', class: 'btn btn-dark btn-sm pos-fr' %>
       </div>
     </div>
   </div>
   <div class="clear"></div>
 <% end %>
+<%= link_to 'Cancel my account', registration_path(resource_name), class: 'ml10', data: { confirm: "Are you sure?" }, method: :delete %>
+

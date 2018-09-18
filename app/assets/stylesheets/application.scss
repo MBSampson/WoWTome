@@ -2,6 +2,7 @@
 @import 'global';
 @import 'warcraft_colors';
 @import 'devise';
+@import 'navbar';
 
 /* Eliminates box model styling quirks */
 *, body {
@@ -29,4 +30,3 @@ body {
   display: block;
   margin: 10px auto;
 }
-

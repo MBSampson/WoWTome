@@ -1,9 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to 'WoWTome', root_path, class: 'navbar-brand deathknight-red'%>
+  <%= link_to root_path, class: 'navbar-brand' do %>
+    <%= image_tag 'wow-icon.png', class: 'navbar-brand-img' %>
+  <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <%= link_to 'My Tome', '#', class: 'nav-link' %>
+    </ul>
     <ul class="navbar-nav flex-float-right">
       <%= display_authentication_options %>
     </ul>
