@@ -1,0 +1,15 @@
+/*** Devise ***/
+
+.devise-link-container {
+  margin-top: 10px;
+}
+
+.login-fields {
+  width: 50%;
+  margin: 0 auto;
+
+  input {
+    width: 100%;
+    padding: $input-field-padding;
+  }
+}
