@@ -1,0 +1,110 @@
+// WoW Colors
+$dk-red:          #c41f3b;
+$dh-magenta:      #a330c9;
+$druid-orange:    #ff7d0a;
+$hunter-green:    #abd473;
+$mage-blue:       #40c7eb;
+$monk-green:      #00ff96;
+$paladin-pink:    #f58cba;
+$priest-white:    #fff;
+$rogue-yellow:    #fff569;
+$shaman-blue:     #0070DE;
+$warlock-purple:  #8787ed;
+$warrior-tan:     #c79c6e;
+
+// Standard Colors
+$shaded-white:    #f2f2f2; // rename to something more descriptive
+$gold-orange:     #eba53d;
+$ivory:           #fffff0;
+$charcoal:        #373737;
+$dark-gold:       #a4732a;
+
+// Fixed Design Styles
+$input-field-padding: 5px 10px;
+
+
+/*** Global Styles ***/
+
+.btn {
+  color: $ivory;
+}
+
+.btn-danger {
+  background: $dk-red;
+}
+
+.clear {
+  clear: both;
+}
+
+.flex-float-right {
+  margin-left: auto;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.mb5 {
+  margin-bottom: 5px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mb25 {
+  margin-bottom: 25px;
+}
+
+.ml10 {
+  margin-left: 10px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.margin-center {
+  margin: 0 auto;
+}
+
+.no-border {
+  border: none;
+}
+
+.no-border-radius {
+  border-radius: 0 !important;
+}
+
+.pl10 {
+  padding-left: 10px;
+}
+
+.pos-fl {
+  float: left;
+}
+
+.pos-fr {
+  float: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.w40 {
+  width: 40%;
+}
+
+.w70 {
+  width: 70%;
+}
+
+.w100 {
+  width: 100%;
+}

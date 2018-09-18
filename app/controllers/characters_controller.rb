@@ -2,28 +2,20 @@ class CharactersController < ApplicationController
   before_action :set_character, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
-  # GET /characters
-  # GET /characters.json
   def index
     @characters = Character.all
   end
 
-  # GET /characters/1
-  # GET /characters/1.json
   def show
   end
 
-  # GET /characters/new
   def new
     @character = Character.new
   end
 
-  # GET /characters/1/edit
   def edit
   end
 
-  # POST /characters
-  # POST /characters.json
   def create
     @character = Character.new(character_params)
     @character.user_id = current_user.id
@@ -39,8 +31,6 @@ class CharactersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /characters/1
-  # PATCH/PUT /characters/1.json
   def update
     respond_to do |format|
       if @character.update(character_params)
@@ -53,8 +43,6 @@ class CharactersController < ApplicationController
     end
   end
 
-  # DELETE /characters/1
-  # DELETE /characters/1.json
   def destroy
     @character.destroy
     respond_to do |format|

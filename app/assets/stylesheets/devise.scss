@@ -1,0 +1,28 @@
+/*** Devise ***/
+
+
+.devise-link-container {
+  margin-top: 10px;
+}
+
+.login-fields {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.editable-settings-container {
+  position: relative;
+
+  .row:nth-child(1) {
+    background: $charcoal;
+  }
+
+  .row {
+    padding: 10px;
+  }
+
+  .back-btn {
+    position: absolute;
+    bottom: 0;
+  }
+}
