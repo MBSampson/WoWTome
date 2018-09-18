@@ -11,6 +11,10 @@
                       autocomplete: 'email',
                       placeholder: 'Email',
                       class: 'input-field mb10 w100' %>
+    <%= f.text_field :account_name,
+                      autofocus: true,
+                      placeholder: 'Account Name',
+                      class: 'input-field mb10 w100' %>
     <%= f.password_field :password,
                          autocomplete: 'new-password',
                          placeholder: 'Password',
