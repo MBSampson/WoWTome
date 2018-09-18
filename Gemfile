@@ -58,9 +58,7 @@ group :development, :test do
   gem 'pry-stack_explorer', '~> 0.4.9'
 
   # Testing gems
-  gem 'rspec', '~> 3.8'
-  gem 'rspec-instafail', '~> 1.0'
-  gem 'rspec-html-matchers', '~> 0.9.1'
+  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
   gem 'factory_girl', '~> 4.9'
 end
 
