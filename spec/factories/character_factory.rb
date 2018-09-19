@@ -4,7 +4,7 @@ FactoryGirl.define do
     sequence :name do |i|
       "#{Faker::Name.first_name} #{i}"
     end
-    level 20
+    level { Faker::Number.between(1, 60) }
     health 0
     location { Faker::Lorem.word  }
     stamina 5
