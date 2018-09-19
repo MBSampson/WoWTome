@@ -21,7 +21,10 @@ class CharactersController < ApplicationController
     @character.user_id = current_user.id
 
     respond_to do |format|
-      if @character.save
+      if Character.find_by_name(character_params[:name])
+        format.html { render :new }
+        format.json { render json: 'A character with this name already exists', status: unprocessable_entity }
+      elsif @character.save
         format.html { redirect_to @character, notice: 'Character was successfully created.' }
         format.json { render :show, status: :created, location: @character }
       else
@@ -59,6 +62,6 @@ class CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name)
+      params.require(:character).permit(:name, :level, :health, :location, :stamina, :strength, :spirit, :agility, :intelligence, :gold, :achievement_points, :professions)
     end
 end

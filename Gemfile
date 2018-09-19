@@ -59,7 +59,7 @@ group :development, :test do
 
   # Testing gems
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
-  gem 'factory_girl', '~> 4.9'
+  gem 'factory_girl_rails', '~> 4.9'
 end
 
 group :development do
