@@ -3,6 +3,6 @@ class TomeController < ApplicationController
 
   def index
     @user = current_user
-    @character = current_user.character
+    @character = current_user.characters
   end
 end
