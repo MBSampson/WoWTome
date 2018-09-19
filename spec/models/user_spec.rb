@@ -1,10 +1,22 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe User, :type => :model do
-  it 'has account_name of Ash' do
-    user = User.new
-    user.account_name = 'Ash'
+describe User, :type => :model do
+    context 'has a character' do
+    it 'appropriately links a user and character' do
+      character = create(:character)
+      expect(character.user).to_not be_nil
+    end
+  end
 
-    expect(user.account_name).to eq('Ash')
+  context '#sanitize_fields' do
+    it 'downcases email and account_name' do
+      user = build(:user, email: 'TEST@TEST.COM', account_name: 'TEST', password: 'password')
+      user.save!
+
+      expect(/[[:upper:]]/.match(user.email)).to be_nil
+      expect(/[[:upper:]]/.match(user.account_name)).to be_nil
+    end
   end
 end

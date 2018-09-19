@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :characters
+  has_one :character
 
   attr_writer :login
 
@@ -11,6 +11,14 @@ class User < ApplicationRecord
   validates :account_name, presence: :true, uniqueness: { case_sensitive: false }
   validate :validate_account_name
 
+  before_save :sanitize_fields
+
+  def sanitize_fields
+    email.downcase!
+    account_name.downcase!
+  end
+
+  # -----Devise Methods-----
   def login
     @login || self.account_name || self.email
   end
