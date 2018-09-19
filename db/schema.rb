@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180919225820) do
+ActiveRecord::Schema.define(version: 20180919231650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20180919225820) do
     t.integer "gold"
     t.integer "achievement_points"
     t.string "professions", default: [], array: true
+    t.bigint "character_class_id"
+    t.index ["character_class_id"], name: "index_characters_on_character_class_id"
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
