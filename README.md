@@ -5,6 +5,7 @@
 - Address devise error messages - can we highlight the input fields instead of generating a giant alert block? If not then consider relocating error messages to the right side of the view's `container` div.
 - Style Forgotten Password devise view
 - Install LetterOpener to view and style application emails
+- Create User posts: Post, PartyFinder, PartyBoard, GuildRecruitment
 
 # On-going
 - Utilize FactoryGirl & rspec to create comprehensive tests
