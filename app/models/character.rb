@@ -1,5 +1,6 @@
 class Character < ApplicationRecord
   belongs_to :user
+  belongs_to :character_class
 
   validates_presence_of :user_id, :health, :gold, :achievement_points
   validates_numericality_of :level, :stamina, :strength, :spirit, :agility, :intelligence, greater_than: 0
