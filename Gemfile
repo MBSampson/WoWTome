@@ -60,6 +60,7 @@ group :development, :test do
   # Testing gems
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
   gem 'factory_girl_rails', '~> 4.9'
+  gem 'rails-controller-testing', '~> 0.0.3'
 end
 
 group :development do

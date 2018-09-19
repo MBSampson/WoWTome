@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :character do
     association :user
-    name { Faker::WorldOfWarcraft.hero }
+    name { Faker::Name.first_name }
     level { Faker::Number.between(1, 60) }
     health { Faker::Number.between(1, 5000) }
     location { Faker::Lorem.word  }
