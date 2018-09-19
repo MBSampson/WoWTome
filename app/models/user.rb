@@ -11,6 +11,13 @@ class User < ApplicationRecord
   validates :account_name, presence: :true, uniqueness: { case_sensitive: false }
   validate :validate_account_name
 
+  before_save :sanitize_fields
+
+  def sanitize_fields
+    email.downcase!
+    account_name.downcase!
+  end
+
   # -----Devise Methods-----
   def login
     @login || self.account_name || self.email

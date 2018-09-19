@@ -1,8 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe Character, :type => :model do
-  it 'has name vallihn' do
-    character = build(:character)
-    expect(character.name).to eq('vallihn')
+describe Character, :type => :model do
+  context '#sanitize_fields' do
+    it 'downcases name and location' do
+      character = build(:character)
+      character.save!
+
+      expect(/[[:upper:]]/.match(character.name)).to be_nil
+      expect(/[[:upper:]]/.match(character.location)).to be_nil
+    end
   end
 end

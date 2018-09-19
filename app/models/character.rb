@@ -8,7 +8,7 @@ class Character < ApplicationRecord
   before_save :sanitize_fields
 
   def sanitize_fields
-    self.name.downcase
-    self.location.downcase
+    name.downcase!
+    location.downcase!
   end
 end
