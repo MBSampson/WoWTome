@@ -13,7 +13,7 @@ describe User, :type => :model do
   context '#sanitize_fields' do
     it 'downcases email and account_name' do
       user = build(:user, email: 'TEST@TEST.COM', account_name: 'TEST', password: 'password')
-      user.save!
+      user.sanitize_fields
 
       expect(/[[:upper:]]/.match(user.email)).to be_nil
       expect(/[[:upper:]]/.match(user.account_name)).to be_nil

@@ -1,7 +1,9 @@
 FactoryGirl.define do
   factory :character do
     association :user
-    name { Faker::Name.first_name }
+    sequence :name do |i|
+      "#{Faker::Name.first_name} #{i}"
+    end
     level { Faker::Number.between(1, 60) }
     health { Faker::Number.between(1, 5000) }
     location { Faker::Lorem.word  }
