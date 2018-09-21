@@ -19,10 +19,6 @@ class CharactersController < ApplicationController
   def create
     @character = Character.new(character_params)
     @character.user_id = current_user.id
-    # TO-DO
-    # Create a select elem in the character new form and have it pass a numeric
-    # value into this controller so that we can assign classes to characters
-    @character.character_class_id = 1
 
     respond_to do |format|
       if Character.find_by_name(character_params[:name])
@@ -66,6 +62,6 @@ class CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name, :level, :health, :location, :stamina, :strength, :spirit, :agility, :intelligence, :gold, :achievement_points, :professions)
+      params.require(:character).permit(:name, :level, :health, :location, :stamina, :strength, :spirit, :agility, :intelligence, :gold, :achievement_points, :professions, :character_class_id)
     end
 end
