@@ -1,5 +1,10 @@
-// Initializes the spec select to only show druid specs (druid is the default
-// value for the new character select
+/*  class_specialization.js
+ *
+ *  Appends an on change listener to CharacterClass select elem which when
+ *  triggered hides all other class specializations that are not relevant
+ *  to the current selected specialization.
+ */
+
 $(function() {
   var $classSelect = $( "select[name*='character_class_id']" );
   var $specSelect = $( "select[name*='class_spec']" );
@@ -7,9 +12,11 @@ $(function() {
   // Hides all non-druid specs
   hideInitialSpecs($specSelect.find('option'));
 
-  setClickListeners($classSelect, $specSelect);
+  setClickListener($classSelect, $specSelect);
 });
 
+// Default character class select option -> druid
+// hides all non-druid specs
 function hideInitialSpecs(spec_options) {
   for(var i = 0; i < spec_options.length; i++) {
     if(i > 2) {
@@ -18,49 +25,35 @@ function hideInitialSpecs(spec_options) {
   }
 }
 
-function setClickListeners(class_select, spec_select) {
+function setClickListener(class_select, spec_select) {
   $(class_select).on('change', function(){
-    hideSpecs(spec_select, $(this).val() - 1);
+    displayRelevantSpecs(spec_select, $(this).val() - 1);
   });
 }
 
 function resetSpecs(spec_options) {
-  console.log("reset specs");
   for(var i = 0; i < spec_options.length; i++) {
     $(spec_options).eq(i).show();
   }
 }
 
-function hideSpecs(spec_select, index) {
+// Hides all character class specs that are not relevant
+// to the current selected character class
+function displayRelevantSpecs(spec_select, index) {
   spec_options = $(spec_select).find('option');
   resetSpecs(spec_options);
 
-  //
   var cursor_head = (index + 1) * 3;
   var cursor_tail = cursor_head - 3;
 
-  if(cursor_head == 3) {
-    for (var i = 0; i < spec_options.length; i++) {
-      if (i >= cursor_head) {
-        $(spec_options).eq(cursor_tail).attr("selected", true).change();
-        $(spec_options).eq(i).hide();
-      }
+  // Set SELECTED to the first option (cursor_tail)
+  // Hide all elements before the tail and at the head (inclusive)
+  for(var i = 0; i < spec_options.length; i++) {
+    if (i == cursor_tail) {
+      $(spec_options).eq(cursor_tail).attr("selected", true).change();
     }
-  } else if (cursor_head > 4 && cursor_head < 25) {
-    for(var i = 0; i < spec_options.length; i++) {
-      if (i == cursor_tail) {
-        $(spec_options).eq(cursor_tail).attr("selected", true).change();
-      }
-      if (i < cursor_tail || i >= cursor_head) {
-        $(spec_options).eq(i).hide();
-      }
-    }
-  } else {
-    for(var i = 0; i < spec_options.length; i++) {
-      if (i < cursor_tail) {
-        $(spec_options).eq(cursor_tail).attr("selected", true).change();
-        $(spec_options).eq(i).hide();
-      }
+    if (i < cursor_tail || i >= cursor_head) {
+      $(spec_options).eq(i).hide();
     }
   }
 }
