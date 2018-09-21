@@ -7,7 +7,7 @@
 
 $(function() {
   var $classSelect = $( "select[name*='character_class_id']" );
-  var $specSelect = $( "select[name*='class_spec']" );
+  var $specSelect = $( "select[name*='specialization']" );
 
   // Hides all non-druid specs
   hideInitialSpecs($specSelect.find('option'));
@@ -57,3 +57,7 @@ function displayRelevantSpecs(spec_select, index) {
     }
   }
 }
+
+
+// TO-DO
+// Does not work on initial page load!
