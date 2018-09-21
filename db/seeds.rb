@@ -69,7 +69,7 @@ CharacterClass.create(
   icon: 'warrior-icon.png',
   main_color: 'warrior-tan',
   resource: 'rage',
-  specializations: %w(arm fury defense)
+  specializations: %w(arms fury defense)
 )
 puts 'Generated CharacterClass seeds'
 
