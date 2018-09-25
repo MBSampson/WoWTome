@@ -31,7 +31,13 @@ describe Character, :type => :model do
 
   context '#show_spec' do
     it "returns a character's specialization" do
-      character = create(:character, :arms_warrior)
+      arms_warrior = create(:character, :arms_warrior)
+      feral_druid = create(:character, :feral_druid)
+      frost_mage = create(:character, :frost_mage)
+
+      expect(arms_warrior.show_spec).to eq('arms')
+      expect(feral_druid.show_spec).to eq('feral')
+      expect(frost_mage.show_spec).to eq('frost')
     end
   end
 end

@@ -20,5 +20,16 @@ FactoryGirl.define do
       specialization 25
       association :character_class, factory: [:character_class, :warrior]
     end
+
+    trait :feral_druid do
+      specialization 2
+      association :character_class, factory: [:character_class, :druid]
+    end
+
+    trait :frost_mage do
+      specialization 8
+      association :character_class, factory: [:character_class, :mage]
+    end
+
   end
 end
