@@ -1,8 +1,6 @@
 <h1>Tome Page</h1>
 
-<button>
-  Create Post
-</button>
+<br />
 
 <button>
   Create PartyFinder
@@ -15,5 +13,18 @@
 <button>
   Create GuildRecruitment (eventually)
 </button>
+
+<br />
+<br />
+
+<h1>My Posts</h1>
+
+<br />
+
+<% @posts.each do |post| %>
+  <%= render 'posts/show', post: post %>
+<% end %>
+
+<%= render 'posts/new' %>
 
 

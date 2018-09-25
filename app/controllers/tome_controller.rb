@@ -4,5 +4,8 @@ class TomeController < ApplicationController
   def index
     @user = current_user
     @character = current_user.characters
+    @posts = Post.where(user_id: current_user.id)
+
+    @post = Post.new
   end
 end

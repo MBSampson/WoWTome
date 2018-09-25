@@ -10,4 +10,8 @@ module ApplicationHelper
       end
     end
   end
+
+  def format_post_date(datetime)
+    datetime.strftime('%B %d, %Y')
+  end
 end

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :characters
+  resources :posts
   devise_for :users
 
   get 'tome_index', to: 'tome#index'

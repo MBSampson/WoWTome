@@ -16,5 +16,11 @@ FactoryGirl.define do
         user.character ||= FactoryGirl.build(:character, :user => user)
       end
     end
+
+    trait :with_post do
+      after(:create) do |instance|
+        instance.posts << FactoryGirl.create(:post)
+      end
+    end
   end
 end

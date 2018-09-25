@@ -50,11 +50,15 @@ $warrior-tan:     #c79c6e;
 
 
 // Standard Colors
-$shaded-white:    #f2f2f2; // rename to something more descriptive
+$light-grey:    #f2f2f2; // rename to something more descriptive
 $gold-orange:     #eba53d;
 $ivory:           #fffff0;
 $charcoal:        #373737;
 $dark-gold:       #a4732a;
+
+.light-grey {
+  color: $light-grey !important;
+}
 
 // Fixed Design Styles
 $input-field-padding: 5px 10px;
@@ -76,6 +80,30 @@ $input-field-padding: 5px 10px;
 
 .flex-float-right {
   margin-left: auto;
+}
+
+.font-sm {
+  font-size: 12px;
+}
+
+.font-lg {
+  font-size: 16px;
+}
+
+.font-xl {
+  font-size: 20px;
+}
+
+.icon-sm {
+  width: 25px;
+}
+
+.icon-md {
+  width: 40px;
+}
+
+.icon-lg {
+  width: 50px;
 }
 
 .inline {
@@ -104,6 +132,10 @@ $input-field-padding: 5px 10px;
 
 .mt10 {
   margin-top: 10px;
+}
+
+.mr10 {
+  margin-right: 10px;
 }
 
 .margin-center {
@@ -136,6 +168,10 @@ $input-field-padding: 5px 10px;
 
 .w40 {
   width: 40%;
+}
+
+.w50 {
+  width: 50%;
 }
 
 .w70 {
