@@ -1,8 +1,7 @@
 /*  class_specialization.js
- *
- *  Appends an on change listener to CharacterClass select elem which when
- *  triggered hides all other class specializations that are not relevant
- *  to the current selected specialization.
+
+    Hides all specs that are irrelevant to the currently selected character
+    class (by default the page selects 'druid').
  */
 
 console.log('class_specialization.js loaded');
@@ -19,8 +18,6 @@ $(function() {
   setClickListener($classSelect, $specSelect);
 });
 
-// Default character class select option -> druid
-// hides all non-druid specs
 function hideInitialSpecs(spec_options) {
   for(var i = 0; i < spec_options.length; i++) {
     if(i > 2) {
@@ -29,6 +26,8 @@ function hideInitialSpecs(spec_options) {
   }
 }
 
+// When a user selects a new class option this callabck will hide all specs
+// that are irrelevant to the currently selected class
 function setClickListener(class_select, spec_select) {
   $(class_select).on('change', function(){
     displayRelevantSpecs(spec_select, $(this).val() - 1);
@@ -41,12 +40,11 @@ function resetSpecs(spec_options) {
   }
 }
 
-// Hides all character class specs that are not relevant
-// to the current selected character class
 function displayRelevantSpecs(spec_select, index) {
   spec_options = $(spec_select).find('option');
   resetSpecs(spec_options);
 
+  // Requires each spec set to be grouped in 3s
   var cursor_head = (index + 1) * 3;
   var cursor_tail = cursor_head - 3;
 
@@ -61,7 +59,3 @@ function displayRelevantSpecs(spec_select, index) {
     }
   }
 }
-
-
-// TO-DO
-// Does not work on initial page load!
