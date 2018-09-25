@@ -28,4 +28,10 @@ describe Character, :type => :model do
       expect(character.health).to eq(stamina_multiplier * character.stamina)
     end
   end
+
+  context '#show_spec' do
+    it "returns a character's specialization" do
+      character = create(:character, :arms_warrior)
+    end
+  end
 end

@@ -14,5 +14,11 @@ FactoryGirl.define do
     intelligence 5
     gold { Faker::Number.between(0, 50000) }
     achievement_points { Faker::Number.between(0, 4000) }
+    character_class
+
+    trait :arms_warrior do
+      specialization 25
+      association :character_class, factory: [:character_class, :warrior]
+    end
   end
 end
