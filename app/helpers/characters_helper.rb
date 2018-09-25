@@ -37,10 +37,9 @@ module CharactersHelper
       ['destruction',   22],
       ['demonology',    23],
       ['affliction',    24],
-      ['arms',          24],
-      ['fury',          24],
-      ['defense',       24],
-
+      ['arms',          25],
+      ['fury',          26],
+      ['defense',       27],
     ]
 
     capture do
