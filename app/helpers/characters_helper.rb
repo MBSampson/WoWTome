@@ -44,7 +44,7 @@ module CharactersHelper
 
     capture do
       concat form.select(:character_class_id, wow_classes)
-      concat form.select(:specialization, class_specs)
+      concat form.select(:spec_id, class_specs)
     end
   end
 end

@@ -17,17 +17,17 @@ FactoryGirl.define do
     character_class
 
     trait :arms_warrior do
-      specialization 25
+      spec_id 25
       association :character_class, factory: [:character_class, :warrior]
     end
 
     trait :feral_druid do
-      specialization 2
+      spec_id 2
       association :character_class, factory: [:character_class, :druid]
     end
 
     trait :frost_mage do
-      specialization 8
+      spec_id 8
       association :character_class, factory: [:character_class, :mage]
     end
   end

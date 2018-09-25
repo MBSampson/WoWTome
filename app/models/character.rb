@@ -52,6 +52,6 @@ class Character < ApplicationRecord
   end
 
   def show_spec
-    SPECIALIZATIONS.first.key(specialization).to_s
+    SPECIALIZATIONS.first.key(spec_id).to_s
   end
 end
