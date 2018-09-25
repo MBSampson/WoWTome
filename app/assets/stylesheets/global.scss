@@ -78,6 +78,30 @@ $input-field-padding: 5px 10px;
   margin-left: auto;
 }
 
+.font-sm {
+  font-size: 12px;
+}
+
+.font-lg {
+  font-size: 16px;
+}
+
+.font-xl {
+  font-size: 20px;
+}
+
+.icon-sm {
+  width: 25px;
+}
+
+.icon-md {
+  width: 40px;
+}
+
+icon-lg {
+  width: 50px;
+}
+
 .inline {
   display: inline-block;
 }
@@ -136,6 +160,10 @@ $input-field-padding: 5px 10px;
 
 .w40 {
   width: 40%;
+}
+
+.w50 {
+  width: 50%;
 }
 
 .w70 {

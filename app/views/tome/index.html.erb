@@ -1,5 +1,7 @@
 <h1>Tome Page</h1>
 
+<br />
+
 <button>
   Create Post
 </button>
@@ -15,5 +17,24 @@
 <button>
   Create GuildRecruitment (eventually)
 </button>
+
+<br />
+<br />
+
+<h1>My Posts</h1>
+
+<br />
+
+<% @posts.each do |post| %>
+  <div class="post-container w50">
+    <div class="font-lg">
+      <%= image_tag 'warrior-icon.png', class: 'icon-sm' %>
+      <b><%= post.show_author %> - Main Character</b>
+    </div>
+    <p><%= post.content %></p>
+  </div>
+<% end %>
+
+<%= render 'posts/new' %>
 
 
