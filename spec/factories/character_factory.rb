@@ -30,6 +30,5 @@ FactoryGirl.define do
       specialization 8
       association :character_class, factory: [:character_class, :mage]
     end
-
   end
 end
