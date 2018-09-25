@@ -13,13 +13,11 @@ describe Character, :type => :model do
 
   context '#calculate_stats' do
     it 'has properly calculated stats (level + stat)' do
+      character = create(:character)
       base_stat_value = 5
       stat_value = base_stat_value + character.level
       stamina_multiplier = 10
-
-      character = build(:character)
-      character.save!
-
+      
       expect(character.stamina).to eq(stat_value)
       expect(character.strength).to eq(stat_value)
       expect(character.spirit).to eq(stat_value)
