@@ -13,12 +13,11 @@ describe Character, :type => :model do
 
   context '#calculate_stats' do
     it 'has properly calculated stats (level + stat)' do
+      character = create(:character)
       base_stat_value = 5
-      stamina_multiplier = 10
-      character = build(:character)
       stat_value = base_stat_value + character.level
-      character.save!
-
+      stamina_multiplier = 10
+      
       expect(character.stamina).to eq(stat_value)
       expect(character.strength).to eq(stat_value)
       expect(character.spirit).to eq(stat_value)
@@ -26,6 +25,18 @@ describe Character, :type => :model do
       expect(character.intelligence).to eq(stat_value)
 
       expect(character.health).to eq(stamina_multiplier * character.stamina)
+    end
+  end
+
+  context '#show_spec' do
+    it "returns a character's specialization" do
+      arms_warrior = create(:character, :arms_warrior)
+      feral_druid = create(:character, :feral_druid)
+      frost_mage = create(:character, :frost_mage)
+
+      expect(arms_warrior.show_spec).to eq('arms')
+      expect(feral_druid.show_spec).to eq('feral')
+      expect(frost_mage.show_spec).to eq('frost')
     end
   end
 end

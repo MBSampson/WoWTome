@@ -2,6 +2,7 @@
 @import 'global';
 @import 'devise';
 @import 'navbar';
+@import 'characters';
 
 /* Eliminates box model styling quirks */
 *, body {
@@ -47,10 +48,6 @@ a {
 
 a:hover {
   color: orange;
-}
-
-a:visited {
-  color: $dark-gold;
 }
 
 hr {

@@ -14,5 +14,21 @@ FactoryGirl.define do
     intelligence 5
     gold { Faker::Number.between(0, 50000) }
     achievement_points { Faker::Number.between(0, 4000) }
+    character_class
+
+    trait :arms_warrior do
+      spec_id 25
+      association :character_class, factory: [:character_class, :warrior]
+    end
+
+    trait :feral_druid do
+      spec_id 2
+      association :character_class, factory: [:character_class, :druid]
+    end
+
+    trait :frost_mage do
+      spec_id 8
+      association :character_class, factory: [:character_class, :mage]
+    end
   end
 end

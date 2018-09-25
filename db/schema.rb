@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180919221429) do
+ActiveRecord::Schema.define(version: 20180925180732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "character_classes", force: :cascade do |t|
+    t.string "name"
+    t.string "icon"
+    t.string "resource"
+    t.string "specializations", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "main_color"
+  end
 
   create_table "characters", force: :cascade do |t|
     t.string "name", limit: 20
@@ -31,6 +41,9 @@ ActiveRecord::Schema.define(version: 20180919221429) do
     t.integer "gold"
     t.integer "achievement_points"
     t.string "professions", default: [], array: true
+    t.bigint "character_class_id"
+    t.integer "spec_id"
+    t.index ["character_class_id"], name: "index_characters_on_character_class_id"
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
