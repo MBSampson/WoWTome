@@ -26,13 +26,7 @@
 <br />
 
 <% @posts.each do |post| %>
-  <div class="post-container w50">
-    <div class="font-lg">
-      <%= image_tag 'warrior-icon.png', class: 'icon-sm' %>
-      <b><%= post.show_author %> - Main Character</b>
-    </div>
-    <p><%= post.content %></p>
-  </div>
+  <%= render 'posts/show', post: post %>
 <% end %>
 
 <%= render 'posts/new' %>

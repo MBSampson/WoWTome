@@ -1,4 +1,8 @@
 .post-container {
   border: 1px solid $gold-orange;
   padding: 10px;
+
+  .post-content {
+    text-indent: 10px;
+  }
 }

@@ -1,4 +1,4 @@
-<%= form_with(model: post, local: true) do |form| %>
+<%= form_with(model: post, local: true) do |f| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this character from being saved:</h2>
@@ -11,9 +11,23 @@
     </div>
   <% end %>
 
-  <%= form.text_field :content, placeholder: 'Write a message' %>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="post-container w50">
+    <div class="post-header mage-blue">
+      <%= image_tag 'mage-icon.png', class: 'icon-sm' %>
+      <%= current_user.account_name %>
+      <span class="pos-fr light-grey">
+        <%= format_post_date(Time.now) %>
+      </span>
+      <div class="clear"></div>
+    </div>
+    <div class="post-fields">
+      <%= f.text_field :content,
+                       placeholder: 'Write a message',
+                       class: 'input-field w100 mt10' %>
+    </div>
+    <div class="post-footer">
+      <%= f.submit 'Submit', class: 'btn btn-sm btn-dark pos-fr mt10' %>
+      <div class="clear"></div>
+    </div>
   </div>
 <% end %>

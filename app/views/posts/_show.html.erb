@@ -1,0 +1,15 @@
+<div class="post-container w50 mb20">
+  <div class="post-header">
+    <span class="pos-fl mage-blue">
+      <%= image_tag 'mage-icon.png', class: 'icon-sm' %>
+      <%= post.show_author %>
+    </span>
+    <span class="pos-fr light-grey"><%= format_post_date(post.created_at) %></span>
+    <div class="clear"></div>
+    <p class="post-content mt10"><%= post.content %></p>
+  </div>
+  <div class="post-footer mt5">
+    <span class="pos-fr mr10">Likes: <%= post.likes %></span>
+    <div class="clear"></div>
+  </div>
+</div>
