@@ -7,7 +7,7 @@
 - Create User posts: Post, PartyFinder, PartyBoard, GuildRecruitment
 
 # Important TO-DO
-- `class_specialization.js` is included on every view, can we only include it on the pages that utilize it? Research `javascript_pack_tag` and how to use it.
+- None
 
 # On-going
 - Utilize FactoryGirl & rspec to create comprehensive tests
