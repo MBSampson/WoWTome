@@ -6,7 +6,7 @@ class Character < ApplicationRecord
   validates_numericality_of :level, :stamina, :strength, :spirit, :agility, :intelligence, greater_than: 0
   validates :name, presence: true, uniqueness: true
 
-  before_save :sanitize_fields, :calculate_stats, :assign_spec
+  before_save :sanitize_fields, :calculate_stats
 
   def sanitize_fields
     name.downcase!
@@ -28,11 +28,5 @@ class Character < ApplicationRecord
 
   def show_class
     self.character_class.name
-  end
-
-  # Assigns a spec_id that relates to the CharacterClass spec array size and not
-  # the Character _form spec hash_map
-  def assign_spec
-    self.spec_id = (spec_id % 3) - 1
   end
 end

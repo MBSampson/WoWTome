@@ -26,7 +26,7 @@ function hideInitialSpecs(spec_options) {
   }
 }
 
-// When a user selects a new class option this callabck will hide all specs
+// When a user selects a new class option this callback will hide all specs
 // that are irrelevant to the currently selected class
 function setClickListener(class_select, spec_select) {
   $(class_select).on('change', function(){
