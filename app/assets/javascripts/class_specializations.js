@@ -8,17 +8,17 @@ console.log('class_specialization.js loaded');
 
 $(function() {
   var $classSelect = $( "select[name*='character_class_id']" );
-  var $specSelect = $( "select[name*='specialization']" );
+  var $specSelect = $( "select[name='character[spec_id]']" );
   var $newCharacterBtn = $( '#new-character-btn' );
 
   // Hides all non-druid specs as druid is the default selected class
   hideInitialSpecs($specSelect.find('option'));
 
-
   setClickListener($classSelect, $specSelect);
 });
 
 function hideInitialSpecs(spec_options) {
+  console.log(spec_options);
   for(var i = 0; i < spec_options.length; i++) {
     if(i > 2) {
       $(spec_options).eq(i).hide();
