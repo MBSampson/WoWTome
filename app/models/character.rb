@@ -6,36 +6,7 @@ class Character < ApplicationRecord
   validates_numericality_of :level, :stamina, :strength, :spirit, :agility, :intelligence, greater_than: 0
   validates :name, presence: true, uniqueness: true
 
-  before_save :sanitize_fields, :calculate_stats
-
-  # Wrapping the hash in an array to avoid errors is ugly, needs refactor
-  SPECIALIZATIONS = [ balance:        1,
-                      feral:          2,
-                      restoration:    3,
-                      beast_mastery:  4,
-                      marksmanship:   5,
-                      survival:       6,
-                      fire:           7,
-                      frost:          8,
-                      arcane:         9,
-                      holy:           10,
-                      retribution:    11,
-                      protection:     12,
-                      holy:           13,
-                      shadow:         14,
-                      discipline:     15,
-                      subtlety:       16,
-                      assassination:  17,
-                      combat:         18,
-                      enhancement:    19,
-                      elemental:      20,
-                      restoration:    21,
-                      destruction:    22,
-                      demonology:     23,
-                      affliction:     24,
-                      arms:           25,
-                      fury:           26,
-                      defense:        27 ].freeze
+  before_save :sanitize_fields, :calculate_stats, :assign_spec
 
   def sanitize_fields
     name.downcase!
@@ -52,10 +23,16 @@ class Character < ApplicationRecord
   end
 
   def show_spec
-    SPECIALIZATIONS.first.key(spec_id).to_s
+    self.character_class.specializations[self.spec_id]
   end
 
   def show_class
     self.character_class.name
+  end
+
+  # Assigns a spec_id that relates to the CharacterClass spec array size and not
+  # the Character _form spec hash_map
+  def assign_spec
+    self.spec_id = (spec_id % 3) - 1
   end
 end

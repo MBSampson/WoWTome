@@ -15,6 +15,7 @@ FactoryGirl.define do
     gold { Faker::Number.between(0, 50000) }
     achievement_points { Faker::Number.between(0, 4000) }
     character_class
+    spec_id { Faker::Number.between(0, 2) }
 
     trait :arms_warrior do
       spec_id 25
