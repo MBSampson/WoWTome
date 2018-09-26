@@ -18,17 +18,17 @@ FactoryGirl.define do
     spec_id { Faker::Number.between(0, 2) }
 
     trait :arms_warrior do
-      spec_id 25
+      spec_id 0
       association :character_class, factory: [:character_class, :warrior]
     end
 
     trait :feral_druid do
-      spec_id 2
+      spec_id 1
       association :character_class, factory: [:character_class, :druid]
     end
 
     trait :frost_mage do
-      spec_id 8
+      spec_id 1
       association :character_class, factory: [:character_class, :mage]
     end
   end
