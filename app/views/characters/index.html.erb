@@ -5,6 +5,8 @@
     <div class="col-sm-3 <%= character.character_class.main_color %>">
       <%= image_tag character.character_class.icon, class: 'class-icon' %>
       <%= character.name.capitalize %>
+      <p>Class: <%= character.show_class %></p>
+      <p>Spec: <%= character.show_spec %></p>
       <br />
       <%= link_to 'Show', character %>
       <%= link_to 'Edit', edit_character_path(character) %>

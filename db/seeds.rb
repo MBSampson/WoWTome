@@ -51,7 +51,7 @@ CharacterClass.create(
 
 CharacterClass.create(
   name: 'shaman',
-  icon: 'shaman',
+  icon: 'shaman-icon.png',
   main_color: 'shaman-blue',
   resource: 'mana',
   specializations: %w(enhancement elemental restoration)
