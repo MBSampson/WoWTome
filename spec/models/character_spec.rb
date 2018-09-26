@@ -39,4 +39,20 @@ describe Character, :type => :model do
       expect(frost_mage.show_spec).to eq('frost')
     end
   end
+
+  describe '#show_class' do
+    context 'character is an arms warrior' do
+      let(:arms_warrior) { create(:character, :arms_warrior) }
+      it "should return 'warrior'" do
+        expect(arms_warrior.show_class).to eq('warrior')
+      end
+    end
+
+    context 'character is a feral druid' do
+      let(:feral_druid) { create(:character, :feral_druid) }
+      it "should return 'druid'" do
+        expect(feral_druid.show_class).to eq('druid')
+      end
+    end
+  end
 end

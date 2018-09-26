@@ -54,4 +54,8 @@ class Character < ApplicationRecord
   def show_spec
     SPECIALIZATIONS.first.key(spec_id).to_s
   end
+
+  def show_class
+    self.character_class.name
+  end
 end
