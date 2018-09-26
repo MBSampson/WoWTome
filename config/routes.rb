@@ -21,5 +21,5 @@ Rails.application.routes.draw do
     root to: 'secret#index', as: :authenticated_test_root
   end
 
-  root to: 'characters#index'
+  root to: 'tome#index'
 end
