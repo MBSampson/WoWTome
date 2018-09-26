@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :characters
   resources :posts
+
   devise_for :users
 
   get 'tome_index', to: 'tome#index'
@@ -15,5 +16,10 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'characters#index'
+  # Set secret#index for authentication rspec tests
+  authenticated do
+    root to: 'secret#index', as: :authenticated_test_root
+  end
+
+  root to: 'tome#index'
 end

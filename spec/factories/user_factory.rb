@@ -12,8 +12,8 @@ FactoryGirl.define do
     password_confirmation 'password'
 
     trait :with_character do
-      after(:build) do |user|
-        user.character ||= FactoryGirl.build(:character, :user => user)
+      after(:create) do |user|
+        user.characters << FactoryGirl.create(:character)
       end
     end
 
