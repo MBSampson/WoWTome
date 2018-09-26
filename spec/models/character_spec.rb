@@ -30,6 +30,15 @@ describe Character, :type => :model do
     end
   end
 
+  describe '#assign_spec' do
+    context 'an arms warrior character is created' do
+      let(:arms_warrior) { create(:character, :arms_warrior) }
+      it 'should set spec_id to 0' do
+        expect(arms_warrior.spec_id).to eq(0)
+      end
+    end
+  end
+
   describe '#show_spec' do
     context 'character is a feral druid' do
       let(:feral_druid) { create(:character, :feral_druid) }
