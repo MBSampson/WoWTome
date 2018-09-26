@@ -1,4 +1,5 @@
 wow_classes = %w(druid hunter mage paladin priest rogue shaman warlock warrior)
+visibility_options = %w(public friends private)
 
 CharacterClass.create(
   name: 'druid',
@@ -73,7 +74,7 @@ CharacterClass.create(
 )
 puts 'Generated CharacterClass seeds'
 
-user = User.create!(
+user = User.create(
   email: 'msam@test.com',
   account_name: 'msam',
   password: '123123',
@@ -81,7 +82,7 @@ user = User.create!(
 )
 user.save!
 
-user2 = User.create!(
+user2 = User.create(
   email:'mrourke@test.com',
   account_name: 'mrou',
   password: '123123',
@@ -91,22 +92,74 @@ user2 = User.create!(
 user2.save!
 puts 'Generated User seeds'
 
-user.characters.create!(
+user.characters.create(
   name: 'vallihn',
   level: 60,
-  health: 100,
   location: 'stormwind',
-  stamina: 5,
-  strength: 5,
-  spirit: 5,
-  agility: 5,
-  intelligence: 5,
   gold: 1000,
   achievement_points: 1280,
   character_class_id: 4,
-  spec_id: 2
+  spec_id: 12
 )
+
+user2.characters.create(
+  name: 'tricycle',
+  level: 60,
+  location: 'ironforge',
+  gold: 1000,
+  achievement_points: 4400,
+  character_class_id: 4,
+  spec_id: 11
+)
+
+
+4.times do
+  class_id = Faker::Number.between(1, 9)
+  spec = Faker::Number.between((class_id * 3) - 2, class_id * 3)
+  user.characters.create(
+    name: Faker::Name.first_name,
+    level: Faker::Number.between(0, 60),
+    location: 'stormwind',
+    gold: Faker::Number.between(0, 50000),
+    achievement_points: Faker::Number.between(0, 1200),
+    character_class_id: class_id,
+    spec_id: spec
+  )
+end
+
+4.times do
+  class_id = Faker::Number.between(1, 9)
+  spec = Faker::Number.between((class_id * 3) - 2, class_id * 3)
+  user2.characters.create(
+    name: Faker::Name.first_name,
+    level: Faker::Number.between(0, 60),
+    location: 'stormwind',
+    gold: Faker::Number.between(0, 50000),
+    achievement_points: Faker::Number.between(0, 1200),
+    character_class_id: class_id,
+    spec_id: spec
+  )
+end
+
 puts 'Generated User Characters'
+
+7.times do
+  user.posts.create(
+    content: Faker::MostInterestingManInTheWorld.quote,
+    visibility: visibility_options[Faker::Number.between(0, 2)],
+    likes: Faker::Number.between(0, 100)
+  )
+end
+
+7.times do
+  user.posts.create(
+    content: Faker::OnePiece.quote,
+    visibility: visibility_options[Faker::Number.between(0, 2)],
+    likes: Faker::Number.between(0, 1000)
+  )
+end
+
+puts 'Generated User Posts'
 
 
 
