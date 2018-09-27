@@ -3,7 +3,7 @@ class CharactersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @characters = Character.all
+    @characters = Character.where(user_id: current_user.id)
   end
 
   def show
